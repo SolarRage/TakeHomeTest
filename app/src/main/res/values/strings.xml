@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TakeHomeTest</string>
+    <string name="noResultText">Result not found</string>
+    <string name="search">Search</string>
+</resources>

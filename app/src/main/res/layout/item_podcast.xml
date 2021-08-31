@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/podcastImage"
+        tools:background="@color/design_default_color_primary_dark"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        />
+    <TextView
+        android:id="@+id/podcastCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:background="@drawable/background_blue_rounded"
+        android:textSize="12sp"
+        tools:text="Category"/>
+
+    <TextView
+        android:id="@+id/podcastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/podcastCategory"
+        android:layout_marginEnd="24dp"
+        android:layout_toEndOf="@id/podcastImage"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text="Namedfjgkdlfgjkdlfjgdfkljgkdfjgkldfjglk"
+        android:lines="1"
+        android:ellipsize="end"/>
+
+    <TextView
+        android:id="@+id/podcastPublisher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/podcastImage"
+        android:layout_marginStart="16dp"
+        android:textSize="12sp"
+        android:layout_below="@id/podcastName"
+        tools:text="Publisher" />
+
+</RelativeLayout>
