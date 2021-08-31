@@ -13,7 +13,6 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import java.lang.reflect.Type
 
 //rxJava to work with retrofit instead of retrofit Call
-//ничего не понятно
 class RxCallAdapterFactory : CallAdapter.Factory() {
     private val originalCallAdapterFactory = RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io())
 

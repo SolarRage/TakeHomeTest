@@ -26,7 +26,6 @@ class PodcastsRepositoryImpl : PodcastsRepository {
     private fun createRetrofit() = Retrofit.Builder()
             //передаем ссылку
         .baseUrl(BASE_URL)
-            //
         .addCallAdapterFactory(RxCallAdapterFactory())
             //создаем конвертор GSON
         .addConverterFactory(GsonConverterFactory.create(createGson()))

@@ -10,7 +10,7 @@ import com.example.takehometest.R
 import com.example.takehometest.view.PodcastsAdapter.PodcastItemModel
 import kotlinx.android.synthetic.main.activity_main.*
 
-//MVP (Model-View-Presenter), MVVM (Model-View-ViewModel recommended)
+
 class MainActivity : AppCompatActivity(), MainView {
 
     private val presenter: MainPresenter = MainPresenterImpl()
