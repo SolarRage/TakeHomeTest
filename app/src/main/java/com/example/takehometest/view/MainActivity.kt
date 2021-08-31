@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity(), MainView {
     override fun showEmptyView(isShown: Boolean) {
         noResult.isVisible = isShown
     }
+    //gittest
     override fun onDestroy() {
         super.onDestroy()
         presenter.onDestroy()
