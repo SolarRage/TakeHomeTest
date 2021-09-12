@@ -3,7 +3,6 @@ package com.example.takehometest.api.responses
 import com.google.gson.annotations.SerializedName
 
 data class PodcastResponseItem(
-    //поле в котором происходит поиск
     @SerializedName("title")
     val title: String?,
     @SerializedName("images")

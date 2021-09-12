@@ -10,7 +10,6 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.rxkotlin.plusAssign
 import io.reactivex.subjects.BehaviorSubject
-import io.reactivex.subjects.PublishSubject
 import java.util.concurrent.TimeUnit.MILLISECONDS
 
 class MainPresenterImpl : MainPresenter {
@@ -38,11 +37,7 @@ class MainPresenterImpl : MainPresenter {
         textChangeSubject.onNext(text)
     }
 
-    /**
-     * Метод реализует задержку в 500 мил/сек
-     * и проверяет введенное значение на совпадение с предидущим, что бы не запускать повторный поиск
-     * Метод обрабатывает исклчения подписки.
-     */
+
     private fun subscribeForTestChanges() {
         compositeDisposable += textChangeSubject
             .debounce(500, MILLISECONDS)
@@ -55,11 +50,11 @@ class MainPresenterImpl : MainPresenter {
     }
 
     private fun handleTextChanged(text: String) {
-        view.setPodcasts(emptyList())
+        //view.setPodcasts(emptyList())
         disposePodcastsRequest()
         podcastsDisposable = podcastsRepository.getPodcasts(text)
             .flattenAsFlowable { it } //foreach
-            .map{ mapToItemModel(it) }
+            .map { mapToItemModel(it) }
             .toList()
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { view.showProgress(true) }
@@ -90,9 +85,7 @@ class MainPresenterImpl : MainPresenter {
         }
     }
 
-    /**
-     * Переопределенный метод, отменят подписку на событие
-     */
+
     override fun onDestroy() {
         compositeDisposable.clear()
         disposePodcastsRequest()

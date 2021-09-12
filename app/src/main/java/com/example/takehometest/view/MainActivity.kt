@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(), MainView {
         etPodcasts.doOnTextChanged { text, _, _, _ -> presenter.onTextChange(text.toString()) }
     }
 
-    //кликабельность найденых результатов
+
     private fun handleOnClick(podcastItemModel: PodcastItemModel) {
 
     }
@@ -39,12 +39,12 @@ class MainActivity : AppCompatActivity(), MainView {
         podcastsAdapter.setPodcasts(podcasts)
     }
 
-    //прогрессбар во время поиска
+
     override fun showProgress(isShown: Boolean) {
         progressBar.isVisible = isShown
     }
 
-    //вью если результатов поиска нет
+
     override fun showEmptyView(isShown: Boolean) {
         noResult.isVisible = isShown
     }
